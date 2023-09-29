@@ -1,0 +1,126 @@
+.blog-container {
+    display: grid;
+    grid-template-columns: 50% 50%;
+    grid-template-rows: 100px 50px 1fr min-content min-content 50px;
+    grid-template-areas:
+        "hd hd"
+        "nav nav"
+        "main main"
+        "bio bio"
+        "share share"
+        "ft ft";
+}
+
+article {
+    grid-area: main;
+}
+
+.blog-post {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: #ffffff;
+    padding: 1rem;
+    margin: 1rem;
+}
+
+.blog-post-img {
+    width: 80%;
+}
+
+.blog-intro {
+    font-weight: bold;
+    font-size: 1.1em;
+}
+
+blockquote {
+    padding: 0.5rem;
+    font-size: 1.1em;
+    border-left: 2px solid #c8ff00;
+}
+
+#share {
+    grid-area: share;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.social-link {
+    margin: 1rem;
+}
+
+#bio {
+    grid-area: bio;
+    display: flex;
+    flex-direction: column;
+    max-width: 100%;
+    padding: 1rem;
+    justify-content: space-between;
+}
+
+.bio-image-container {
+    display: flex;
+    justify-content: center;
+    margin: auto 0;
+    max-width: 100%;
+}
+
+.bio-description {
+    max-width: 100%;
+}
+
+@media (min-width: 900px) {
+    .blog-container {
+        grid-template-columns: repeat(8, 1fr);
+        grid-template-rows: 100px 1fr 1fr 1fr 50px;
+        grid-template-areas:
+            "hd hd hd hd hd hd hd hd"
+            "main main main main main main nav nav"
+            "main main main main main main bio bio"
+            "main main main main main main share share"
+            "ft ft ft ft ft ft ft ft";
+    }
+
+    .blog-post {
+        margin: 2rem;
+        padding: 2rem;
+    }
+
+    .sidebar {
+        max-width: 80%;
+    }
+
+    blockquote {
+        padding: 1rem;
+        font-size: 1.2em;
+    }
+
+    #bio {
+        justify-content: flex-start;
+        padding-top: 5rem;
+        max-width: 80%;
+        grid-row-start: 2;
+        margin-top: 3rem;
+        z-index: -1;
+    }
+
+    #bio-icon {
+        max-width: 70%;
+    }
+
+    .bio-image-container {
+        display: flex;
+        justify-content: center;
+        margin: 0 auto;
+        max-width: 100%;
+    }
+
+    .bio-description {
+        max-width: 100%;
+    }
+    #share {
+        grid-row-start: 2;
+        width: 80%;
+    }
+}
